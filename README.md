@@ -4,7 +4,9 @@ Walkable pixel-art portfolio inspired by RPG exploration. Built with **Phaser 4*
 
 ## Live
 
-> Deploy via Vercel after connecting this repo — see [Deploy](#deploy).
+**GitHub:** [github.com/jaychauhan1/portfolio](https://github.com/jaychauhan1/portfolio)
+
+**Deploy:** Connect the repo to [Vercel](https://vercel.com) (Hobby / free) — import `jaychauhan1/portfolio`, no env vars needed. Your site will be live at `portfolio.vercel.app` or similar.
 
 ## Features
 
