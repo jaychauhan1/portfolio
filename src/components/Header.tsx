@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { SECTIONS, type SectionId } from '../types/resume'
+import { EmblemMark } from './CandleHero'
 
 interface HeaderProps {
   activeSection: SectionId
@@ -12,7 +13,7 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
   return (
     <>
       <header className="fixed left-0 top-0 z-30 hidden w-full items-center justify-between px-6 py-6 md:flex lg:px-20 lg:pt-10">
-        <span className="font-serif text-sm italic text-muted">Portfolio</span>
+        <EmblemMark className="h-10 w-12" />
         <nav>
           <ul className="flex gap-6 font-sans text-xs uppercase tracking-[0.2em] lg:gap-8">
             {SECTIONS.map((section) => (
@@ -42,8 +43,8 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
         </nav>
       </header>
 
-      <header className="fixed left-0 top-0 z-30 flex w-full items-center justify-between bg-background/90 px-4 py-4 backdrop-blur-sm md:hidden">
-        <span className="font-serif text-sm italic">JC</span>
+      <header className="fixed left-0 top-0 z-30 flex w-full items-center justify-between bg-background/90 px-4 py-3 backdrop-blur-sm md:hidden">
+        <EmblemMark className="h-9 w-11" />
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
