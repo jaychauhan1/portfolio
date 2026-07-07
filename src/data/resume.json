@@ -1,0 +1,124 @@
+{
+  "profile": {
+    "name": "Jyotiradityasinh Chauhan",
+    "tagline": "Building systems where security, data, and people intersect.",
+    "email": "jchauha2@cougarnet.uh.edu",
+    "phone": "(832) 906-1126",
+    "linkedin": "https://linkedin.com/in/jyotiradityasinh-chauhan",
+    "github": "https://github.com/jaychauhan1",
+    "citizenship": "U.S. Citizen"
+  },
+  "about": {
+    "title": "Quiet Builder",
+    "paragraphs": [
+      "CS student at the University of Houston with a focus on operational technology security, full-stack systems, and applied AI. I like work that sits at the intersection of real infrastructure and the people who depend on it.",
+      "Outside the terminal: Agora coffee, Houston at night, basketball courts, and the kind of minimal design that lets the details breathe — Margiela restraint, Diptyque warmth."
+    ]
+  },
+  "education": [
+    {
+      "school": "University of Houston",
+      "dates": "August 2023 — May 2027",
+      "degree": "Bachelor of Science in Computer Science",
+      "gpa": "3.68",
+      "location": "Houston, TX"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Cybersecurity Intern",
+      "company": "LyondellBasell",
+      "dates": "May 2026 — August 2026",
+      "location": "Houston, TX",
+      "bullets": [
+        "Piloted a SQL-backed (SQLite) vulnerability management pipeline at a live LyondellBasell site, automating ingestion of asset and vulnerability data via a Python poller pulling delta updates from Claroty CTD's REST API in near real-time.",
+        "Engineered a CVSS v3.1 environmental recast engine that re-scores NVD base vulnerability ratings against OT-specific exploitability constraints, correcting for IT-centric scoring assumptions on segmented Process Control Network assets.",
+        "Authored an end-to-end vulnerability management playbook covering identify-prioritize-remediate process, Claroty CTD configuration, and a four-table relational schema feeding a BI dashboard — scaling the pilot toward all 45 sites."
+      ],
+      "tags": ["python", "sql", "ot-security", "claroty", "cvss"]
+    },
+    {
+      "title": "Research Assistant",
+      "company": "University of Houston",
+      "dates": "Jan 2026 — Present",
+      "location": "Houston, TX",
+      "bullets": [
+        "Built and shipped a full-stack web application with a GPU-hosted LLM backend integrated into Canvas LMS via Python/FastAPI; designed the end-to-end data pipeline — ingestion, inference (sglang), and response delivery — serving 100+ active users.",
+        "Instrumented the system with structured logging and query analytics; performed systematic troubleshooting to iterate on pipeline performance and reduce latency under real production load."
+      ],
+      "tags": ["python", "fastapi", "llm", "full-stack"]
+    },
+    {
+      "title": "AI/ML Intern",
+      "company": "Tata Consultancy Services",
+      "dates": "Sep 2025 — Dec 2025",
+      "location": "Houston, TX",
+      "bullets": [
+        "Accelerated POC delivery by 30% by building reusable Python, C#, and JavaScript frameworks alongside lightweight ETL pipelines, enabling faster data modeling and product experimentation.",
+        "Wrote complex queries and data transformation logic across large datasets to surface trends and drive recommendations; authored system diagrams and technical documentation."
+      ],
+      "tags": ["python", "javascript", "etl", "ai-ml"]
+    },
+    {
+      "title": "Teaching Assistant",
+      "company": "University of Houston",
+      "dates": "May 2024 — Aug 2025",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed structured labs covering data structures, algorithms, operating systems, and computer architecture for 100+ students, improving debugging efficiency by 25%.",
+        "Applied a data-informed approach to iteratively refine content each semester, leading live coding sessions and gathering feedback to improve learning outcomes."
+      ],
+      "tags": ["teaching", "algorithms", "systems"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Embedded Systems Network Monitor",
+      "tech": "C++, Python, firmware interfaces, embedded systems",
+      "dates": "Jan — Apr 2026",
+      "bullets": [
+        "Developed a lightweight C++ network monitoring agent targeting embedded systems with constrained resources; interfaced with firmware-level diagnostics to capture real-time telemetry.",
+        "Built a Python dashboard to visualize packet-level data and system health metrics, reducing processing overhead by 30% on low-power hardware targets."
+      ]
+    },
+    {
+      "name": "Large-Scale Log Analytics Pipeline",
+      "tech": "Splunk, SPL, Python, SQL, JavaScript, D3.js",
+      "dates": "Oct — Dec 2025",
+      "bullets": [
+        "Built SPL correlation searches, interactive dashboards (JavaScript/D3.js), and alerting pipelines in Splunk; reduced simulated intrusion investigation time by 25%.",
+        "Authored end-to-end data workflows from raw log ingestion to structured dashboards, standardizing evidence collection across multi-source datasets."
+      ]
+    }
+  ],
+  "extracurriculars": [
+    {
+      "title": "Information Security Lead",
+      "org": "CougarCS — Information Security Branch",
+      "dates": "May 2023 — Present",
+      "bullets": [
+        "Designed and led hands-on Wireshark workshops for 30+ students, growing weekly attendance 25% through iterative content design.",
+        "Translated dense technical datasets and packet-level analysis into engaging, structured learning experiences."
+      ]
+    }
+  ],
+  "skills": {
+    "Languages": "Python, C++, Java, JavaScript, TypeScript, SQL, R",
+    "Systems": "Embedded systems, firmware interfaces, operating systems, computer architecture, distributed computing",
+    "Operational Technology": "Claroty CTD, OT/ICS security, Purdue Model network segmentation, Process Control Networks, CVSS v3.1, EPSS",
+    "Data & Visualization": "ETL pipelines, PostgreSQL, SQLite, Tableau, Power BI, Splunk",
+    "Backend / Infra": "FastAPI, Docker, Kubernetes, CI/CD, Git, Redis, REST APIs, JWT authentication",
+    "AI / ML": "LLMs, RAG, inference optimization, sglang, benchmarking",
+    "Certifications": "CompTIA Security+"
+  },
+  "zones": [
+    { "id": "agora", "label": "Agora Coffee", "section": "contact", "hint": "Home base — order a coffee, find contact info" },
+    { "id": "campus", "label": "UH Campus", "section": "education", "hint": "Education & CougarCS" },
+    { "id": "lyondell", "label": "LyondellBasell", "section": "experience", "hint": "OT Security internship" },
+    { "id": "research", "label": "Research Lab", "section": "experience", "hint": "LLM / FastAPI work" },
+    { "id": "tcs", "label": "TCS Tower", "section": "experience", "hint": "AI/ML internship" },
+    { "id": "project_lab", "label": "Project Lab", "section": "projects", "hint": "Featured builds" },
+    { "id": "rooftop", "label": "Rooftop", "section": "about", "hint": "About me — city views" },
+    { "id": "court", "label": "Basketball Court", "section": "skills", "hint": "Hidden alley — skills box score" }
+  ]
+}
