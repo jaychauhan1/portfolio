@@ -1,10 +1,10 @@
 {
   "profile": {
-    "name": "Jyotiradityasinh",
-    "displayName": "Jyotiradityasinh",
-    "shortName": "Jay",
-    "title": "Computer Science Student & Security Engineer",
-    "taglines": ["SECURITY ENGINEER", "FULL STACK BUILDER", "OT SECURITY"],
+    "name": "Jyotiradityasinh Chauhan",
+    "displayName": "Jyotiradityasinh Chauhan",
+    "shortName": "Jyotiradityasinh Chauhan",
+    "title": "Computer Science Student",
+    "taglines": ["Software Engineer", "Cybersecurity"],
     "bio": "CS student at the University of Houston building systems where security, data, and people intersect. Security+ certified with hands-on experience in OT vulnerability management, LLM pipelines, and full-stack development.",
     "bioExtended": [
       "I like work that sits at the intersection of real infrastructure and the people who depend on it — from Claroty CTD pipelines at LyondellBasell to GPU-hosted LLM backends serving 100+ users.",

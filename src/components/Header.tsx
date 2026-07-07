@@ -11,56 +11,50 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
 
   return (
     <>
-      <header className="fixed left-0 top-0 z-30 hidden w-full items-center justify-between px-6 py-4 md:flex lg:px-20 lg:pt-8">
-        <span className="font-terminal text-xs uppercase tracking-widest text-muted">
-          Drag anywhere
-        </span>
+      <header className="fixed left-0 top-0 z-30 hidden w-full items-center justify-between px-6 py-6 md:flex lg:px-20 lg:pt-10">
+        <span className="font-serif text-sm italic text-muted">Portfolio</span>
         <nav>
-          <ul className="flex gap-4 font-terminal text-xs uppercase lg:gap-6 lg:text-sm">
+          <ul className="flex gap-6 font-sans text-xs uppercase tracking-[0.2em] lg:gap-8">
             {SECTIONS.map((section) => (
-              <li
-                key={section.id}
-                className="border-r border-text/30 pr-4 transition-colors last:border-0 hover:text-secondary lg:pr-6"
-              >
+              <li key={section.id}>
                 <button
                   type="button"
                   onClick={() => onNavigate(section.id)}
-                  className={`flex gap-2 ${activeSection === section.id ? 'text-secondary' : ''}`}
+                  className={`transition-colors hover:text-accent ${
+                    activeSection === section.id ? 'text-accent' : 'text-text/70'
+                  }`}
                 >
-                  <span className="text-secondary">{section.index}.</span>
-                  <span>{section.label}</span>
+                  {section.label}
                 </button>
               </li>
             ))}
-            <li className="pl-2">
+            <li>
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="flex gap-2 transition-colors hover:text-secondary"
+                className="text-text/70 transition-colors hover:text-accent"
               >
-                <span className="text-secondary">5.</span>
-                <span>Resume</span>
+                Resume
               </a>
             </li>
           </ul>
         </nav>
       </header>
 
-      {/* Mobile header */}
-      <header className="fixed left-0 top-0 z-30 flex w-full items-center justify-between bg-background/80 px-4 py-3 backdrop-blur-sm md:hidden">
-        <span className="font-terminal text-xs text-secondary">JC</span>
+      <header className="fixed left-0 top-0 z-30 flex w-full items-center justify-between bg-background/90 px-4 py-4 backdrop-blur-sm md:hidden">
+        <span className="font-serif text-sm italic">JC</span>
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="font-terminal text-xs uppercase text-text"
+          className="font-sans text-xs uppercase tracking-widest text-text"
         >
           {menuOpen ? 'Close' : 'Menu'}
         </button>
       </header>
 
       {menuOpen && (
-        <nav className="fixed inset-0 z-20 flex flex-col items-center justify-center gap-6 bg-background/95 md:hidden">
+        <nav className="fixed inset-0 z-20 flex flex-col items-center justify-center gap-8 bg-background/98 md:hidden">
           {SECTIONS.map((section) => (
             <button
               key={section.id}
@@ -69,9 +63,9 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
                 onNavigate(section.id)
                 setMenuOpen(false)
               }}
-              className="font-terminal text-lg uppercase"
+              className="font-serif text-2xl font-light"
             >
-              <span className="text-secondary">{section.index}.</span> {section.label}
+              {section.label}
             </button>
           ))}
         </nav>
@@ -88,7 +82,7 @@ interface SectionDotsProps {
 export function SectionDots({ activeSection, onNavigate }: SectionDotsProps) {
   return (
     <nav
-      className="fixed right-4 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-3 md:flex lg:right-8"
+      className="fixed right-5 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-3 md:flex"
       aria-label="Section navigation"
     >
       {SECTIONS.map((section) => (
@@ -97,10 +91,10 @@ export function SectionDots({ activeSection, onNavigate }: SectionDotsProps) {
           type="button"
           onClick={() => onNavigate(section.id)}
           aria-label={`Go to ${section.label}`}
-          className={`h-2 w-2 rounded-full transition-all ${
+          className={`h-1.5 w-1.5 rounded-full transition-all ${
             activeSection === section.id
-              ? 'scale-125 bg-secondary'
-              : 'bg-text/40 hover:bg-text/70'
+              ? 'scale-150 bg-accent'
+              : 'bg-text/25 hover:bg-text/50'
           }`}
         />
       ))}

@@ -1,7 +1,6 @@
 import { useCallback, useRef, useState } from 'react'
 import { HeroSection } from './components/HeroSection'
-import { BlobBackground } from './components/BlobBackground'
-import { BootSequence } from './components/BootSequence'
+import { IntroOverlay } from './components/IntroOverlay'
 import { ContactSection } from './components/ContactSection'
 import { Header, SectionDots, useActiveSection } from './components/Header'
 import { ProjectsSection } from './components/ProjectsSection'
@@ -10,7 +9,7 @@ import { WorkSection } from './components/WorkSection'
 import type { SectionId } from './types/resume'
 
 export function AppShell() {
-  const [booted, setBooted] = useState(false)
+  const [introDone, setIntroDone] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const activeSection = useActiveSection(containerRef)
 
@@ -20,23 +19,18 @@ export function AppShell() {
 
   return (
     <>
-      {!booted && <BootSequence onComplete={() => setBooted(true)} />}
+      {!introDone && <IntroOverlay onComplete={() => setIntroDone(true)} />}
 
-      {booted && (
-        <>
-          <BlobBackground />
-          <Header activeSection={activeSection} onNavigate={navigate} />
-          <SectionDots activeSection={activeSection} onNavigate={navigate} />
+      <Header activeSection={activeSection} onNavigate={navigate} />
+      <SectionDots activeSection={activeSection} onNavigate={navigate} />
 
-          <div ref={containerRef} className="snap-container relative z-10">
-            <HeroSection onContact={() => navigate('contact')} />
-            <SkillsSection />
-            <WorkSection />
-            <ProjectsSection />
-            <ContactSection />
-          </div>
-        </>
-      )}
+      <div ref={containerRef} className="snap-container relative z-10">
+        <HeroSection onContact={() => navigate('contact')} />
+        <SkillsSection />
+        <WorkSection />
+        <ProjectsSection />
+        <ContactSection />
+      </div>
     </>
   )
 }

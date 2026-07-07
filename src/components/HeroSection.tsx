@@ -1,5 +1,6 @@
 import { data } from '../data'
-import { TypewriterTagline } from './TypewriterTagline'
+import { CandleHero } from './CandleHero'
+import { RotatingRoles } from './RotatingRoles'
 
 interface HeroSectionProps {
   onContact: () => void
@@ -11,59 +12,57 @@ export function HeroSection({ onContact }: HeroSectionProps) {
   return (
     <section
       id="about"
-      className="snap-section relative z-10 min-h-[100dvh] px-6 py-20 md:px-20 lg:px-32"
+      className="snap-section relative z-10 min-h-[100dvh] px-6 py-24 md:px-20 lg:px-32"
     >
-      <div className="flex min-h-[70dvh] flex-col justify-center">
-        <div className="max-w-2xl">
-          <h1 className="glow-text text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl">
-            {profile.shortName}
-          </h1>
+      <div className="flex min-h-[75dvh] flex-col items-center justify-center text-center">
+        <CandleHero firstName="Jyotiradityasinh" lastName="Chauhan" />
 
-          <div className="mt-4">
-            <TypewriterTagline />
-          </div>
+        <h1 className="mt-8 font-serif text-3xl font-light tracking-wide text-text md:text-4xl lg:text-5xl">
+          Jyotiradityasinh Chauhan
+        </h1>
 
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-text/80 md:text-lg">
-            {profile.bio}
-          </p>
+        <div className="mt-3">
+          <RotatingRoles />
+        </div>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <button
-              type="button"
-              onClick={onContact}
-              className="rounded-full bg-secondary px-8 py-3 font-semibold text-background transition hover:brightness-110"
-            >
-              Contact Me
-            </button>
-            <a
-              href="#about-details"
-              className="flex items-center gap-2 rounded-full border border-secondary px-8 py-3 font-semibold text-secondary transition hover:bg-secondary/10"
-            >
-              Learn More <span>→</span>
-            </a>
-          </div>
+        <p className="mt-8 max-w-md text-sm leading-relaxed text-muted md:max-w-lg md:text-base">
+          {profile.bio}
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <button
+            type="button"
+            onClick={onContact}
+            className="border border-text bg-text px-8 py-3 font-sans text-sm tracking-wide text-cream transition hover:bg-transparent hover:text-text"
+          >
+            Contact
+          </button>
+          <a
+            href="#about-details"
+            className="border border-text/30 px-8 py-3 font-sans text-sm tracking-wide text-text transition hover:border-text"
+          >
+            About
+          </a>
         </div>
       </div>
 
-      <div id="about-details" className="max-w-3xl pb-20">
-        <h2 className="font-terminal text-sm uppercase tracking-[0.3em] text-secondary">
-          0. About
-        </h2>
-        <p className="mt-4 text-2xl font-semibold md:text-3xl">{profile.title}</p>
+      <div id="about-details" className="mx-auto max-w-2xl pb-24 text-center md:text-left">
+        <p className="font-serif text-xs uppercase tracking-[0.35em] text-accent">About</p>
+        <p className="mt-4 font-serif text-2xl font-light md:text-3xl">{profile.title}</p>
 
-        <div className="mt-8 space-y-4 text-base leading-relaxed text-text/80">
+        <div className="mt-8 space-y-4 text-sm leading-relaxed text-muted md:text-base">
           {profile.bioExtended.map((p) => (
             <p key={p.slice(0, 30)}>{p}</p>
           ))}
         </div>
 
-        <div className="mt-8 rounded-xl border border-text/10 bg-surface p-6">
-          <p className="font-terminal text-xs uppercase tracking-widest text-secondary">Education</p>
-          <p className="mt-2 text-lg font-semibold">{education.school}</p>
-          <p className="text-text/70">
+        <div className="mt-10 border border-text/10 bg-cream p-8">
+          <p className="font-serif text-xs uppercase tracking-[0.3em] text-accent">Education</p>
+          <p className="mt-3 font-serif text-xl">{education.school}</p>
+          <p className="mt-1 text-muted">
             {education.degree} · GPA {education.gpa}
           </p>
-          <p className="text-sm text-muted">{education.dates}</p>
+          <p className="text-sm text-muted/80">{education.dates}</p>
         </div>
       </div>
     </section>

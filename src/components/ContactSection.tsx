@@ -11,8 +11,7 @@ export function ContactSection() {
     const fd = new FormData(form)
     const subject = encodeURIComponent(String(fd.get('subject') ?? 'Portfolio Contact'))
     const body = encodeURIComponent(String(fd.get('message') ?? ''))
-    const email = encodeURIComponent(profile.email)
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`
+    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
     setSubmitted(true)
   }
 
@@ -21,27 +20,25 @@ export function ContactSection() {
       id="contact"
       className="snap-section relative z-10 flex min-h-[100dvh] flex-col justify-center px-6 py-20 md:px-20 lg:px-32"
     >
-      <div className="max-w-2xl">
-        <h2 className="font-terminal text-sm uppercase tracking-[0.3em] text-secondary">
-          4. Contact
-        </h2>
-        <p className="mt-4 text-2xl font-semibold md:text-3xl">Get in touch</p>
+      <div className="mx-auto max-w-lg">
+        <p className="font-serif text-xs uppercase tracking-[0.35em] text-accent">Contact</p>
+        <p className="mt-4 font-serif text-3xl font-light md:text-4xl">Get in touch</p>
 
-        <div className="mt-6 flex flex-wrap gap-4 font-terminal text-sm">
-          <a href={profile.github} target="_blank" rel="noreferrer" className="text-secondary hover:underline">
-            GitHub
+        <div className="mt-8 flex flex-col gap-2 font-sans text-sm text-muted">
+          <a href={`mailto:${profile.email}`} className="transition hover:text-text">
+            {profile.email}
           </a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="text-secondary hover:underline">
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="transition hover:text-text">
             LinkedIn
           </a>
-          <a href={`mailto:${profile.email}`} className="text-secondary hover:underline">
-            {profile.email}
+          <a href={profile.github} target="_blank" rel="noreferrer" className="transition hover:text-text">
+            GitHub
           </a>
         </div>
 
-        <form onSubmit={handleSubmit} className="mt-10 space-y-4">
+        <form onSubmit={handleSubmit} className="mt-12 space-y-6">
           <div>
-            <label htmlFor="email" className="font-terminal text-xs uppercase tracking-widest text-muted">
+            <label htmlFor="email" className="font-serif text-xs uppercase tracking-widest text-muted">
               Email
             </label>
             <input
@@ -49,12 +46,11 @@ export function ContactSection() {
               name="email"
               type="email"
               required
-              className="mt-2 w-full rounded-lg border border-text/20 bg-surface px-4 py-3 text-text outline-none transition focus:border-secondary"
-              placeholder="you@email.com"
+              className="mt-2 w-full border-b border-text/20 bg-transparent py-2 text-text outline-none transition focus:border-accent"
             />
           </div>
           <div>
-            <label htmlFor="subject" className="font-terminal text-xs uppercase tracking-widest text-muted">
+            <label htmlFor="subject" className="font-serif text-xs uppercase tracking-widest text-muted">
               Subject
             </label>
             <input
@@ -62,37 +58,35 @@ export function ContactSection() {
               name="subject"
               type="text"
               required
-              className="mt-2 w-full rounded-lg border border-text/20 bg-surface px-4 py-3 text-text outline-none transition focus:border-secondary"
-              placeholder="Hello!"
+              className="mt-2 w-full border-b border-text/20 bg-transparent py-2 text-text outline-none transition focus:border-accent"
             />
           </div>
           <div>
-            <label htmlFor="message" className="font-terminal text-xs uppercase tracking-widest text-muted">
+            <label htmlFor="message" className="font-serif text-xs uppercase tracking-widest text-muted">
               Message
             </label>
             <textarea
               id="message"
               name="message"
               required
-              rows={5}
-              className="mt-2 w-full resize-none rounded-lg border border-text/20 bg-surface px-4 py-3 text-text outline-none transition focus:border-secondary"
-              placeholder="Your message..."
+              rows={4}
+              className="mt-2 w-full resize-none border-b border-text/20 bg-transparent py-2 text-text outline-none transition focus:border-accent"
             />
           </div>
           <button
             type="submit"
-            className="rounded-full bg-secondary px-8 py-3 font-semibold text-background transition hover:brightness-110"
+            className="border border-text bg-text px-8 py-3 font-sans text-sm tracking-wide text-cream transition hover:bg-transparent hover:text-text"
           >
-            Submit
+            Send
           </button>
           {submitted && (
-            <p className="font-terminal text-sm text-terminal">Opening your email client...</p>
+            <p className="text-sm text-muted">Opening your email client…</p>
           )}
         </form>
       </div>
 
-      <footer className="mt-16 font-terminal text-xs text-muted">
-        © {new Date().getFullYear()} {profile.displayName} Chauhan
+      <footer className="mx-auto mt-20 max-w-lg text-center font-sans text-xs text-muted/60">
+        © {new Date().getFullYear()} Jyotiradityasinh Chauhan
       </footer>
     </section>
   )
