@@ -4,7 +4,7 @@ export function WorkSection() {
   return (
     <section
       id="work"
-      className="snap-section relative z-10 flex min-h-[100dvh] flex-col justify-center px-6 py-20 md:px-20 lg:px-32"
+      className="snap-section relative z-10 flex min-h-[100dvh] flex-col justify-center px-6 py-20 pt-32 md:px-20 md:pt-36 lg:px-32"
     >
       <div className="mx-auto max-w-4xl">
         <p className="font-serif text-xs uppercase tracking-[0.35em] text-accent">Work</p>

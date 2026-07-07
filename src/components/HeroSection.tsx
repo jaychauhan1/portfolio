@@ -12,7 +12,7 @@ export function HeroSection({ onContact }: HeroSectionProps) {
   return (
     <section
       id="about"
-      className="snap-section relative z-10 min-h-[100dvh] px-6 py-24 md:px-20 lg:px-32"
+      className="snap-section relative z-10 min-h-[100dvh] px-6 pb-24 pt-32 md:px-20 md:pt-36 lg:px-32"
     >
       <div className="flex min-h-[75dvh] flex-col items-center justify-center text-center">
         <CandleHero firstName="Jyotiradityasinh" lastName="Chauhan" />
