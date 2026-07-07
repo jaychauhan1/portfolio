@@ -1,11 +1,21 @@
 export interface Profile {
   name: string
-  tagline: string
+  displayName: string
+  shortName: string
+  title: string
+  taglines: string[]
+  bio: string
+  bioExtended: string[]
   email: string
   phone: string
   linkedin: string
   github: string
-  citizenship: string
+  resumeUrl: string
+}
+
+export interface SkillCategory {
+  category: string
+  items: string[]
 }
 
 export interface Experience {
@@ -13,60 +23,36 @@ export interface Experience {
   company: string
   dates: string
   location: string
-  bullets: string[]
-  tags: string[]
+  description: string
+  highlights: string[]
 }
 
 export interface Project {
   name: string
-  tech: string
-  dates: string
-  bullets: string[]
+  description: string
+  tech: string[]
+  link: string
 }
-
-export interface Education {
-  school: string
-  dates: string
-  degree: string
-  gpa: string
-  location: string
-}
-
-export interface Extracurricular {
-  title: string
-  org: string
-  dates: string
-  bullets: string[]
-}
-
-export interface Zone {
-  id: string
-  label: string
-  section: SectionId
-  hint: string
-}
-
-export type SectionId =
-  | 'about'
-  | 'contact'
-  | 'education'
-  | 'experience'
-  | 'projects'
-  | 'skills'
 
 export interface ResumeData {
   profile: Profile
-  about: { title: string; paragraphs: string[] }
-  education: Education[]
+  skills: SkillCategory[]
   experience: Experience[]
   projects: Project[]
-  extracurriculars: Extracurricular[]
-  skills: Record<string, string>
-  zones: Zone[]
+  education: {
+    school: string
+    degree: string
+    gpa: string
+    dates: string
+  }
 }
 
-export interface GameZoneEvent {
-  section: SectionId
-  zoneId: string
-  label: string
-}
+export type SectionId = 'about' | 'skills' | 'work' | 'projects' | 'contact'
+
+export const SECTIONS: { id: SectionId; label: string; index: number }[] = [
+  { id: 'about', label: 'About', index: 0 },
+  { id: 'skills', label: 'Skills', index: 1 },
+  { id: 'work', label: 'Work', index: 2 },
+  { id: 'projects', label: 'Projects', index: 3 },
+  { id: 'contact', label: 'Contact', index: 4 },
+]

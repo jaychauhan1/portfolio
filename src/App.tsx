@@ -1,60 +1,42 @@
-import { useCallback, useEffect, useState } from 'react'
-import { GameCanvas } from './game/GameCanvas'
-import { onZoneEnter, onZoneExit } from './game/events'
-import type { GameZoneEvent, SectionId } from './types/resume'
-import { ContentPanel } from './components/ContentPanel'
-import { ControlsHint, RotatePrompt } from './components/RotatePrompt'
-import { LoadingScreen } from './components/LoadingScreen'
-import { MobileFallback } from './components/MobileFallback'
-import { MusicPlayer } from './components/MusicPlayer'
-import { useIsMobilePortrait } from './hooks/useMediaQuery'
+import { useCallback, useRef, useState } from 'react'
+import { HeroSection } from './components/HeroSection'
+import { BlobBackground } from './components/BlobBackground'
+import { BootSequence } from './components/BootSequence'
+import { ContactSection } from './components/ContactSection'
+import { Header, SectionDots, useActiveSection } from './components/Header'
+import { ProjectsSection } from './components/ProjectsSection'
+import { SkillsSection } from './components/SkillsSection'
+import { WorkSection } from './components/WorkSection'
+import type { SectionId } from './types/resume'
 
 export function AppShell() {
-  const isMobilePortrait = useIsMobilePortrait()
-  const [loaded, setLoaded] = useState(false)
-  const [activeSection, setActiveSection] = useState<SectionId | null>(null)
-  const [zoneLabel, setZoneLabel] = useState<string>('')
+  const [booted, setBooted] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const activeSection = useActiveSection(containerRef)
 
-  const handleClose = useCallback(() => {
-    setActiveSection(null)
-    setZoneLabel('')
+  const navigate = useCallback((id: SectionId) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }, [])
 
-  useEffect(() => {
-    const unsubEnter = onZoneEnter((detail: GameZoneEvent) => {
-      setActiveSection(detail.section)
-      setZoneLabel(detail.label)
-    })
-    const unsubExit = onZoneExit(handleClose)
-
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') handleClose()
-    }
-    window.addEventListener('keydown', handleKey)
-
-    return () => {
-      unsubEnter()
-      unsubExit()
-      window.removeEventListener('keydown', handleKey)
-    }
-  }, [handleClose])
-
-  if (isMobilePortrait) {
-    return <MobileFallback />
-  }
-
   return (
-    <div className="relative h-full w-full overflow-hidden bg-[var(--color-bg-dark)]">
-      {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
-      <GameCanvas active={true} />
-      {loaded && (
+    <>
+      {!booted && <BootSequence onComplete={() => setBooted(true)} />}
+
+      {booted && (
         <>
-          <MusicPlayer />
-          <ControlsHint />
-          <RotatePrompt />
+          <BlobBackground />
+          <Header activeSection={activeSection} onNavigate={navigate} />
+          <SectionDots activeSection={activeSection} onNavigate={navigate} />
+
+          <div ref={containerRef} className="snap-container relative z-10">
+            <HeroSection onContact={() => navigate('contact')} />
+            <SkillsSection />
+            <WorkSection />
+            <ProjectsSection />
+            <ContactSection />
+          </div>
         </>
       )}
-      <ContentPanel section={activeSection} zoneLabel={zoneLabel} onClose={handleClose} />
-    </div>
+    </>
   )
 }

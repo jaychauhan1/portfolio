@@ -1,76 +1,40 @@
-# Houston Night Quest — Interactive Portfolio
+# Jyotiradityasinh Chauhan — Portfolio
 
-Walkable pixel-art portfolio inspired by RPG exploration. Built with **Phaser 4**, **React**, and **TypeScript**, deployed free on **Vercel**.
-
-## Live
+A [ddaniel.dev](https://ddaniel.dev)-inspired portfolio with terminal boot animation, dark neon aesthetic, and scroll-snap sections.
 
 **GitHub:** [github.com/jaychauhan1/portfolio](https://github.com/jaychauhan1/portfolio)
 
-**Deploy:** Connect the repo to [Vercel](https://vercel.com) (Hobby / free) — import `jaychauhan1/portfolio`, no env vars needed. Your site will be live at `portfolio.vercel.app` or similar.
-
 ## Features
 
-- **Houston at night** — explore a top-down map to discover resume sections
-- **Agora Coffee** — spawn zone with contact info
-- **Margiela / Diptyque aesthetic** — cream panels, serif typography, numbered sections
-- **Ambient music** — generative night-drive pad (no copyrighted tracks)
-- **Mobile fallback** — scrollable resume in portrait mode
-- **Basketball court Easter egg** — hidden alley leads to skills box score
+- Terminal boot sequence (`npm run dev` animation) with skip button
+- Dark theme with neon lime accents
+- Draggable gradient blob background
+- Typewriter tagline rotation
+- Scroll-snap sections: About, Skills, Work, Projects, Contact
+- Section dot navigation + numbered header nav
+- Project carousel
+- Contact form (mailto)
+- Fully responsive with mobile menu
 
-## Controls
+## Stack
 
-| Input | Action |
-|-------|--------|
-| WASD / Arrow keys | Move |
-| E | Interact with zone |
-| ESC | Close panel |
+- React 19 + TypeScript + Vite
+- Tailwind CSS v4
+- Framer Motion
 
-## Local development
+## Local dev
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+## Deploy (Vercel, free)
 
-## Build
-
-```bash
-npm run build
-npm run preview
-```
-
-## Deploy
-
-### Vercel (recommended)
-
-1. Push this repo to GitHub (`jaychauhan1/portfolio`)
-2. Go to [vercel.com](https://vercel.com) → **Add New Project**
-3. Import the repo — Vercel auto-detects Vite
-4. Deploy — no environment variables needed
-
-### GitHub Pages (alternative)
-
-```bash
-npm run build
-# Deploy dist/ to gh-pages branch
-```
-
-## Project structure
-
-```
-src/
-├── game/           # Phaser scenes, map, textures
-├── components/     # React overlays, music, mobile fallback
-├── data/           # resume.json content
-└── types/          # TypeScript types
-```
+1. Push to GitHub
+2. Import repo at [vercel.com](https://vercel.com)
+3. Deploy — no env vars needed
 
 ## Content
 
-Resume content lives in `src/data/resume.json`. Update this file to refresh site content without touching game code.
-
-## License
-
-MIT — personal portfolio project.
+Edit `src/data/resume.json` to update all site content.
