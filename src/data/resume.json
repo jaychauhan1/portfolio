@@ -59,22 +59,28 @@
   ],
   "projects": [
     {
-      "name": "Embedded Systems Network Monitor",
-      "description": "C++ network monitoring agent for embedded systems with Python dashboard for packet-level telemetry.",
-      "tech": ["C++", "Python", "Embedded"],
-      "link": "https://github.com/jaychauhan1"
+      "name": "Canvas Coding Assistant",
+      "description": "Production LLM coding assistant for Canvas LMS — Qwen2.5-Coder-7B on GPU via SGLang, serving 100+ active users.",
+      "tech": ["Python", "FastAPI", "SGLang", "Chrome Extension"],
+      "link": "https://github.com/jaychauhan1/canvas-coding-assistant"
     },
     {
-      "name": "Log Analytics Pipeline",
-      "description": "Splunk SPL correlation searches with D3.js dashboards — reduced intrusion investigation time by 25%.",
-      "tech": ["Splunk", "D3.js", "Python"],
-      "link": "https://github.com/jaychauhan1"
+      "name": "Job Application Pipeline",
+      "description": "Multi-platform Playwright automation with LLM-powered LaTeX resume tailoring and email ingestion.",
+      "tech": ["Python", "Playwright", "Ollama", "LaTeX"],
+      "link": "https://github.com/jaychauhan1/job-application-pipeline"
     },
     {
-      "name": "CougarCS Security Workshops",
-      "description": "Hands-on Wireshark workshops for 30+ students with 25% attendance growth through iterative design.",
-      "tech": ["Wireshark", "Security"],
-      "link": "https://github.com/jaychauhan1"
+      "name": "LLM Grading with Execution Feedback",
+      "description": "Execution-grounded code evaluation pipeline using Qwen — grades based on runtime behavior, not static inspection.",
+      "tech": ["Python", "LLMs", "Sandbox"],
+      "link": "https://github.com/jaychauhan1/llm-grading-execution-feedback"
+    },
+    {
+      "name": "Portfolio",
+      "description": "Personal portfolio site with warm editorial design, deployed on Vercel.",
+      "tech": ["React", "TypeScript", "Tailwind"],
+      "link": "https://github.com/jaychauhan1/portfolio"
     }
   ],
   "education": {

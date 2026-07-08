@@ -1,20 +1,18 @@
 # Jyotiradityasinh Chauhan — Portfolio
 
-A [ddaniel.dev](https://ddaniel.dev)-inspired portfolio with terminal boot animation, dark neon aesthetic, and scroll-snap sections.
+Personal portfolio site with a warm cream aesthetic, candle hero animation, and scroll-snap sections.
 
+**Live:** [portfolio-pink-mu-c2p7srhcva.vercel.app](https://portfolio-pink-mu-c2p7srhcva.vercel.app)  
 **GitHub:** [github.com/jaychauhan1/portfolio](https://github.com/jaychauhan1/portfolio)
 
 ## Features
 
-- Terminal boot sequence (`npm run dev` animation) with skip button
-- Dark theme with neon lime accents
-- Draggable gradient blob background
-- Typewriter tagline rotation
-- Scroll-snap sections: About, Skills, Work, Projects, Contact
-- Section dot navigation + numbered header nav
-- Project carousel
-- Contact form (mailto)
-- Fully responsive with mobile menu
+- Warm editorial design with serif headings and scroll-snap sections
+- Candle hero animation with emblem intro
+- Sections: About, Skills, Work, Projects, Contact
+- Project carousel and section dot navigation
+- Fully responsive layout
+- Content driven by `src/data/resume.json`
 
 ## Stack
 
@@ -29,7 +27,7 @@ npm install
 npm run dev
 ```
 
-## Deploy (Vercel, free)
+## Deploy (Vercel)
 
 1. Push to GitHub
 2. Import repo at [vercel.com](https://vercel.com)
