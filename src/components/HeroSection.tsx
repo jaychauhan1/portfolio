@@ -4,9 +4,10 @@ import { RotatingRoles } from './RotatingRoles'
 
 interface HeroSectionProps {
   onContact: () => void
+  startLit?: boolean
 }
 
-export function HeroSection({ onContact }: HeroSectionProps) {
+export function HeroSection({ onContact, startLit = false }: HeroSectionProps) {
   const { profile, education } = data
 
   return (
@@ -15,7 +16,7 @@ export function HeroSection({ onContact }: HeroSectionProps) {
       className="snap-section relative z-10 min-h-[100dvh] px-6 pb-24 pt-32 md:px-20 md:pt-36 lg:px-32"
     >
       <div className="flex min-h-[75dvh] flex-col items-center justify-center text-center">
-        <CandleHero firstName="Jyotiradityasinh" lastName="Chauhan" />
+        <CandleHero firstName="Jyotiradityasinh" lastName="Chauhan" startLit={startLit} />
 
         <h1 className="mt-8 font-serif text-3xl font-light tracking-wide text-text md:text-4xl lg:text-5xl">
           Jyotiradityasinh Chauhan

@@ -95,15 +95,20 @@ export function OvalEmblem({
 interface CandleHeroProps {
   firstName: string
   lastName: string
+  startLit?: boolean
 }
 
-export function CandleHero({ firstName, lastName }: CandleHeroProps) {
-  const [lit, setLit] = useState(false)
+export function CandleHero({ firstName, lastName, startLit = false }: CandleHeroProps) {
+  const [lit, setLit] = useState(startLit)
 
   useEffect(() => {
+    if (startLit) {
+      setLit(true)
+      return
+    }
     const t = setTimeout(() => setLit(true), 300)
     return () => clearTimeout(t)
-  }, [])
+  }, [startLit])
 
   return (
     <div className="relative flex flex-col items-center">

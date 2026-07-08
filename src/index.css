@@ -79,8 +79,8 @@ body,
     transform: scaleY(0) scaleX(0.5);
     opacity: 0;
   }
-  60% {
-    transform: scaleY(1.1) scaleX(1.05);
+  50% {
+    transform: scaleY(1.08) scaleX(1.03);
     opacity: 1;
   }
   100% {
@@ -118,7 +118,7 @@ body,
 
 .flame {
   transform-origin: bottom center;
-  animation: flame-ignite 1.4s ease-out forwards, flame-flicker 3s ease-in-out 1.4s infinite;
+  animation: flame-ignite 1.8s ease-out forwards, flame-flicker 3s ease-in-out 1.8s infinite;
 }
 
 .candle-glow {
